@@ -141,3 +141,12 @@ class GetTopNOpenContractsTest(TestCase):
 
         expected_open_contracts = [4, 2, 5]
         self.assertEqual(actual_open_contracts, expected_open_contracts)
+
+
+class ContractTest(TestCase):
+    def test_str_representation(self):
+        id_ = 1
+        debt = 1.1
+        contract = Contract(id_, debt)
+        expected_str = f'id={id_}, debt={debt}'
+        self.assertEqual(expected_str, str(contract))
