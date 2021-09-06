@@ -41,3 +41,11 @@ To run a specific test method:
 ```console
 $ python -m unittest tests.<module_name>.<class_name>.<method_name>
 ```
+To run test coverage:
+```console
+$ coverage run -m unittest
+```
+To show coverage report:
+```console
+$ coverage report
+```
