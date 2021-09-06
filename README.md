@@ -32,6 +32,20 @@ For security reasons, there is a limit on how many requests a single travel can 
 ## Project requirements
 - Python ≥ 3.9.4
 
+## Project setup
+To create a python virtual environment:
+```console
+$ python3.9 -m venv venv
+```
+To activate the virtual environment:
+```console
+$ source venv/bin/activate
+```
+To install project dependencies:
+```console
+(venv) $ pip install -r requirements.txt
+```
+
 ## Running the tests
 To run all tests:
 ```console
