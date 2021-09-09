@@ -39,6 +39,7 @@ class Contracts:
             raise NegativeTopNError('top_n must be greater than 0.')
 
         open_contracts.sort(key=lambda contract: contract.debt, reverse=True)
+        renegotiated_contracts = set(renegotiated_contracts)
         return [contract.id for contract in open_contracts if
                 contract.id not in renegotiated_contracts][:top_n]
 
