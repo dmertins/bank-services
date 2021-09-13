@@ -63,3 +63,10 @@ To show coverage report:
 ```console
 $ coverage report
 ```
+
+## Development
+TODO:
+- _contract-service_: this service will manage the associate contracts.
+- _renegotiation-service_: this service will manage contract renegotiation.
+- _debtor-service_: this service will manage debtor contracts.
+- _order-service_: this service will manage physical money requests from branches.
