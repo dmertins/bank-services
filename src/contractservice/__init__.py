@@ -17,4 +17,7 @@ def create_app(test_config=None) -> Flask:
 
     Path(app.instance_path).mkdir(exist_ok=True)
 
+    from . import db
+    db.init_app(app)
+
     return app
