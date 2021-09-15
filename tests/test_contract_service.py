@@ -1,5 +1,6 @@
 import sqlite3
 from unittest import TestCase
+from unittest.mock import patch
 
 from flask import Flask
 
@@ -40,3 +41,19 @@ class DBConnectionTest(TestCase):
             db.executescript('SELECT 1')
 
         self.assertIn('closed database', str(cm.exception))
+
+
+class DBInitializationTest(TestCase):
+    """Database initialization tests."""
+
+    def setUp(self):
+        app = create_app({
+            'TESTING': True,
+        })
+        self.app = app
+
+    @patch('src.contractservice.db.init_db')
+    def test_init_db_command(self, fake_init_db):
+        result = self.app.test_cli_runner().invoke(args=['init-db'])
+        self.assertTrue(fake_init_db.called)
+        self.assertIn('Initialized', result.output)
