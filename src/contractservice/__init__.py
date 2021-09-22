@@ -20,4 +20,7 @@ def create_app(test_config=None) -> Flask:
     from . import db
     db.init_app(app)
 
+    from . import contract
+    app.register_blueprint(contract.bp)
+
     return app
